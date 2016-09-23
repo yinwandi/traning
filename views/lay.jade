@@ -1,0 +1,92 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Document
+    style(type='text/css').
+        body {
+            font: 14px/1.2 "微软雅黑";
+        }
+        div {
+            width: 300px;
+            position: relative;
+            margin: 20px 0;
+            padding: 5px 10px;
+        }
+        .form_control {
+            border: 1px #ccc solid;
+        }
+        input[type="text"],
+        input[type="password"] {
+            border: none;
+            width: 100%;
+        }
+        .form_control.active {
+            border: 1px #32BC61 solid;
+            background-color: #fff;
+        }
+        .form_control.error {
+            border: 1px #f00 solid;
+            background-color: #FBF9BB;
+        }
+        .form_control.error input[type="text"],
+        .form_control.error input[type="password"] {
+            background-color: #FBF9BB;
+            color: #f00;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border: none;
+            outline: none;
+        }
+        .form_control .valid_message {
+            color: #32BC61;
+            position: absolute;
+            left: 325px;
+            top: 5px;
+            width: 200px;
+        }
+        .form_control.error .valid_message {
+            color: #f00;
+        }
+        .form_control.success .valid_message {
+            background: url(sucess.png) no-repeat;
+            left: auto;
+            right: 5px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+        }
+        .none {
+            display: none;
+        }
+        .formbox{
+            margin:0 auto;
+            border:1px solid red;
+            width:420px;
+            height:300px;
+        }
+        .btn{
+            width:200px;
+            height:40px;
+            margin-left: 60px;
+            margin-top: 40px;
+        }
+        h1{
+            margin-top: 30px;
+            margin-left: 500px;
+        }
+h1 管理系统
+.formbox
+    form
+        .form_control
+            input.required(value='315359131@qq.com', type='text', name='email', data-tip='请输入您的邮箱', data-valid='isNonEmpty||isEmail', data-error='email不能为空||邮箱格式不正确')
+        .form_control
+            input.required(value='123456789', type='password', data-tip='请输入您的密码', data-valid='isNonEmpty||between:6-16', data-error='密码不能为空||密码长度6-16位', name='nickname')
+        div
+            // <input type="submit" value="提交" class="btn">
+            button.btn 登陆
+
+    script(type='text/javascript', src='script/jquery-1.11.1.js')
+    script(type='text/javascript', src='script/jquery-validate.js')
+    script(type='text/javascript',src="script/lay.js")
+    script(src="script/layout.js")

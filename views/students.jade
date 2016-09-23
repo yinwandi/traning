@@ -1,0 +1,48 @@
+extends login
+block content
+    link(rel='stylesheet', href='style/bootstrap.min.css')
+    link(rel='stylesheet', href='style/students.css')
+    button.btn2.btn-primary.btn-lg 性别筛选(男)
+    button.btn3.btn-primary.btn-lg 性别筛选(女)
+    button.btn4.btn-primary.btn-lg 排序
+    button.mybtn.btn.btn-primary.btn-lg(type='button',id="bt")
+        | 添加
+    // Modal
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                    h4#myModalLabel.modal-title 添加数据
+                .modal-body
+                    form.myform
+                        .form-group
+                            label 编号
+                            input#fixnum(type='text', placeholder='编号', name='number')
+                        .form-group
+                            label 姓名
+                            input(type='text', placeholder='姓名', name='name')
+                        .form-group
+                            label 年龄
+                            input(type='text', placeholder='年龄', name='age')
+                        .form-group
+                            label 成绩
+                            input(type='text', placeholder='成绩', name='score')
+                        .form-group
+                            label 性别
+                            input(type='text', placeholder='性别', name='sex')
+                        button 提交
+    table.tab.table.table-hover
+        thead
+            th 编号
+            th 姓名
+            th 年龄
+            th 成绩
+            th 性别
+            th 删除
+        tbody
+    script(src='script/jquery.js')
+    script(src='script/bootstrap.min.js')
+    script(src='script/students.js')
+
